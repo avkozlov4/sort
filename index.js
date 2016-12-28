@@ -15,7 +15,7 @@ function getRandomArray(len) {
   return newArr;
 }
 
-// BUBBLE O(n^{2})
+// BUBBLE
 function bubble(arr) {
   var swaped;
 
@@ -41,8 +41,6 @@ function bubble(arr) {
 }
 
 // MERGE SORT 
-// Worst: O(n log n)
-// Best: O(n log n) 
 function merge(left, right){
   let result = [];
   let il = 0;
@@ -73,8 +71,6 @@ function mergeSort(arr){
 
 
 //INSERTION
-// Worst: О(n2)
-// Best: O(n) 
 function insertionSort(arr) {
   for (var i = 0; i < arr.length; i++) {
     var selected = arr[i];
@@ -92,7 +88,3 @@ function insertionSort(arr) {
 let bubbleResult = bubble(getRandomArray(20));
 let mergeResult = mergeSort(getRandomArray(7));
 let insertionResult = insertionSort(getRandomArray(8));
-
-console.log('Bubble sort: ', bubbleResult);
-console.log('Merge sort: ', mergeResult);
-console.log('Insertion sort: ', insertionResult); 

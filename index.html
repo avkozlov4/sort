@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        font-family: Helvetica;
+      }
+
+      h3 {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        font-size: 2em;
+        color: #aaa;
+      }
+      .amount {
+        font-size: 2em;
+        width: 80px;
+      }
+
+      .container {
+        padding: 20px 70px;
+      }
+
+      .gen {
+        font-size: 2em;
+      }
+
+      .box div {
+        font-size: 2em;
+        color: #444;
+        display: inline-block;
+      }
+    </style>
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script defer src="index.js"></script>
+  </head>
+<body>
+<div class="container">
+  <input class="amount" id="amount" type="number" value="10" min="1" max="99">
+  <button id="gen" class="gen">Generate</button>
+  <div class="box">
+    <h3>Raw array:</h3>
+    <div id="source"></div>
+  </div>
+  <div class="box">
+    <h3>Bubble sort:</h3>
+    <div id="bubble-output"></div>
+  </div>
+  <div class="box">
+    <h3>Insertion sort:</h3>
+    <div id="insert-output"></div>
+  </div>
+  <div class="box">
+    <h3>Merge sort:</h3>
+    <div id="merge-output"></div>
+  </div>
+  
+</div>
+
+<script>
+function addBrackets(arr) {
+  return '[' + arr + ']';
+}
+
+  $('#gen').on('click', function() {
+    var arr = getRandomArray(Number($('#amount').val() || 10));
+    $('#source').text('[' + arr + ']');
+    $('#bubble-output').text(addBrackets(bubble(arr)));
+    $('#insert-output').text(addBrackets(insertionSort(arr)));
+    $('#merge-output').text(addBrackets(mergeSort(arr)));
+  });
+</script>
+</body>
+</html>
