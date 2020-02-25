@@ -1,5 +1,3 @@
-function functa() { alert(4); }
-
 function generateRandomInt(min = 0, max = 9) {
   var rand = min + Math.random() * (max - min)
   rand = Math.round(rand);
