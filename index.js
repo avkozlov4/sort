@@ -5,6 +5,8 @@ function generateRandomInt(min = 0, max = 9) {
   return rand;
 }
 
+new text
+
 function getRandomArray(len) {
   var newArr = [];
 
